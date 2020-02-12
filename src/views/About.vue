@@ -1,7 +1,4 @@
 <template>
-<div id="wrapper">
-<MyHeader/>
-<MyNavigation/>
 <main id="contents">
 <div id="intro" class="block"><div class="inner">
 <div class="body"><h1 class="title"><span><img src="/data/images/about_title.png" width="86" height="18" alt="About"></span><span>G's ACADEMYとは</span></h1></div>
@@ -20,17 +17,10 @@
 </div>
 </section>
 </main>
-</div>
 </template>
 
 <script>
-import MyHeader from '@/components/MyHeader.vue'
-import MyNavigation from '../components/MyNavigation.vue'
 export default {
   name: 'About',
-  components: {
-    MyHeader,
-    MyNavigation
-  }
 }
 </script>

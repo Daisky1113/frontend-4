@@ -1,8 +1,6 @@
 <template>
   <div id="devcourse">
 <div id="wrapper">
-<MyHeader/>
-<MyNavigation/>
 <main id="contents">
 <div id="intro" class="block">
 <div class="inner">
@@ -26,13 +24,7 @@
 </div>
 </template>
 <script>
-  import MyHeader from '../components/MyHeader.vue'
-  import MyNavigation from '../components/MyNavigation.vue'
   export default{
     name: 'DevCourse',
-    components: {
-      MyHeader,
-      MyNavigation
-    }
   }
 </script>

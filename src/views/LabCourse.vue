@@ -1,8 +1,6 @@
 <template>
   <div id="labcourse">
-<div id="wrapper">
-<MyHeader/>
-<MyNavigation/>
+
 <main id="contents">
 <div id="intro" class="block"><div class="inner">
 <div class="body"><h1 class="title"><span><img src="/data/images/labcourse_title01.png" width="160" height="54" alt="Tokyo lab Course"></span><span>東京フルタイム総合コース</span></h1></div>
@@ -17,16 +15,9 @@
 </section>
 </main>
 </div>
-</div>
 </template>
 <script>
-  import MyHeader from '../components/MyHeader.vue'
-  import MyNavigation from '../components/MyNavigation.vue'
   export default{
     name: 'LabCourse',
-    components: {
-      MyHeader,
-      MyNavigation
-    }
   }
 </script>

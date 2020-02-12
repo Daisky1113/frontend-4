@@ -1,16 +1,27 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link :to="{name: 'About' }">About</router-link> |
-      <router-link :to="{name: 'dev' }">DevCouse</router-link> |
-      <router-link :to="{name: 'lab' }">LabCourse</router-link> |
-    </div>
+    <div id="wrapper">
+    <MyHeader/>
+    <MyNavigation/>
     <transition mode="out-in">
       <router-view/>
     </transition>
   </div>
+  </div>
 </template>
+<script>
+  import MyHeader from './components/MyHeader.vue'
+  import MyNavigation from './components/MyNavigation.vue'
+
+  export default{
+    name: 'App',
+    components: {
+      MyHeader,
+      MyNavigation
+    }
+  }
+  
+</script>
 
 <style lang="scss">
 #app {
