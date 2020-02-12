@@ -1,18 +1,7 @@
 <template>
 <div id="wrapper">
 <MyHeader/>
-<nav id="gNav" class="gNav201605">
-<ul>
-
-<li class="nav02"><a href="/about/"><img src="/data/images/gNav_about.png" width="158" height="80" alt="About"></a></li>
-<li class="nav03"><a href="/devcourse/"><img src="/data/images/gNav_tokyodevcourse.png" width="158" height="80" alt="Tokyo DEV Course"></a></li>
-<li class="nav07"><a href="/labcourse/"><img src="/data/images/gNav_tokyolabcourse.png" width="158" height="80" alt="Tokyo LAB Course"></a></li>
-<li class="nav08"><a href="/fukuokadev/"><img src="/data/images/gNav_fukuokadevcourse.png" width="158" height="80" alt="Fukuoka DEV Course"></a></li>
-
-
-<li class="nav09"><a href="/fukuokalab/"><img src="/data/images/gNav_fukuokalabcourse.png" width="158" height="80" alt="Fukuoka LAB Course"></a></li>
-<li class="apprication nav06"><a href="https://krs.bz/dhw/m/gs_form" target="_blank"><img src="/data/images/gNav_nav06.png" width="156" height="76" alt="Entry"></a></li></ul>
-</nav>
+<MyNavigation/>
 <main id="contents">
 <div id="intro" class="block"><div class="inner">
 <div class="body"><h1 class="title"><span><img src="/data/images/about_title.png" width="86" height="18" alt="About"></span><span>G's ACADEMYとは</span></h1></div>
@@ -36,11 +25,12 @@
 
 <script>
 import MyHeader from '@/components/MyHeader.vue'
-
+import MyNavigation from '../components/MyNavigation.vue'
 export default {
   name: 'About',
   components: {
     MyHeader,
+    MyNavigation
   }
 }
 </script>
