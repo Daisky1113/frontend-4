@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import TopPage from '../views/TopPage.vue'
 import DevCourse from '../views/DevCourse.vue'
+import LabCourse from '../views/LabCourse.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -22,6 +23,11 @@ const routes = [
     path: '/devcourse',
     name: 'dev',
     component: DevCourse
+  },
+  {
+    path: 'labcourse',
+    name: 'lab',
+    component: LabCourse
   }
 ]
 
