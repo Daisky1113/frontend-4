@@ -12,7 +12,7 @@
           <v-container>
             <v-row>
               <v-col cols="12" sm="12" md="12">
-                <v-text-field label="task name" required></v-text-field>
+                <v-text-field v-model="name" label="task name" required></v-text-field>
               </v-col>
             </v-row>
           </v-container>
@@ -20,16 +20,30 @@
         <v-card-actions>
           <v-spacer></v-spacer>
           <v-btn color="blue darken-1" text @click="dialog = false">Close</v-btn>
-          <v-btn color="blue darken-1" text @click="dialog = false">Save</v-btn>
+          <v-btn color="blue darken-1" text @click="regist">Save</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
   </v-row>
 </template>
 <script>
+import { mapMutations } from 'vuex'
   export default {
     data: () => ({
       dialog: false,
+      name: ''
     }),
+    methods: {
+      regist(){
+        this.addTodo({
+          name: this.name,
+          state: false,
+          id: Math.floor(Math.random() * 1000)
+        })
+        this.dialog = false
+        this.name = ''
+      },
+      ...mapMutations(['addTodo'])
+    }
   }
 </script>

@@ -24,6 +24,9 @@ export default new Vuex.Store({
   mutations: {
     toggleSideNav(state){
       state.drawer = !state.drawer
+    },
+    addTodo(state,todo){
+      state.todos.push(todo)
     }
   },
   actions: {
