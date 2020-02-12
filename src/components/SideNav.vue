@@ -41,7 +41,7 @@
         <v-list-item
           v-for="item in items"
           :key="item.title"
-          link
+          :to="item.link"
         >
           <v-list-item-icon>
             <v-icon>{{ item.icon }}</v-icon>
@@ -61,8 +61,9 @@
       return {
         drawer: null,
         items: [
-          { title: 'Home', icon: 'dashboard' },
-          { title: 'About', icon: 'question_answer' },
+          { title: 'Home', icon: 'dashboard', link: { name: 'Home' } },
+          { title: 'Todo', icon: 'mdi-clipboard-list-outline', link: { name: 'Todo' } },
+          { title: 'Login', icon: 'mdi-login', link: { name: 'Login' } },
         ],
       }
     },
