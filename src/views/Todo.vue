@@ -20,27 +20,15 @@
 <script>
 import TodoTable from '../components/TodoTable.vue'
 import TodoDoneTable from '../components/TodoDoneTable.vue'
+
 export default{
   components: {
     TodoTable,
-    TodoDoneTable
+    TodoDoneTable,
   },
   data: function(){
     return {
-      todos: [
-        {
-          name: 'lorem ipsum lorem ipsum',
-          id: 1
-        },
-        {
-          name: 'test2',
-          id: 2
-        },
-        {
-          name: 'test3',
-          id: 3
-        }
-      ],
+      todos: this.$store.state.todos,
       done: [
         {
           name: 'foo',
