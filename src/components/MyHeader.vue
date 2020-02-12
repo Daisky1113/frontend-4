@@ -5,7 +5,7 @@
       dense
       dark
     >
-      <v-app-bar-nav-icon></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon @click="toggleSideNav"></v-app-bar-nav-icon>
 
       <v-toolbar-title>{{ pageTitle }}</v-toolbar-title>
 
@@ -43,6 +43,8 @@
   </div>
 </template>
 <script>
+import { mapMutations } from 'vuex'
+
 export default{
   name: 'MyHeader',
   props: {
@@ -51,6 +53,8 @@ export default{
   data: () => ({
 
   }),
-  
+  methods: {
+    ...mapMutations(['toggleSideNav'])
+  }
 }
 </script>
