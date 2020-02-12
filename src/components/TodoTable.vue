@@ -6,6 +6,7 @@
     dark
     >
     <v-toolbar-title>{{ todoTitle }}</v-toolbar-title>
+    <AddTodo/>
     </v-app-bar>
   <v-card-text>
   <v-simple-table>
@@ -38,7 +39,11 @@
   </v-card>
 </template>
 <script>
+import AddTodo from '../components/AddTodo.vue'
   export default {
+    components: {
+      AddTodo
+    },
     props:{
       todoDatas: Array,
       todoTitle: String
