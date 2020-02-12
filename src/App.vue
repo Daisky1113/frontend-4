@@ -6,7 +6,9 @@
       <router-link :to="{name: 'dev' }">DevCouse</router-link> |
       <router-link :to="{name: 'lab' }">LabCourse</router-link> |
     </div>
-    <router-view/>
+    <transition mode="out-in">
+      <router-view/>
+    </transition>
   </div>
 </template>
 
@@ -30,5 +32,25 @@
       color: #42b983;
     }
   }
+}
+.v-enter{
+  opacity: 0;
+}
+
+.v-enter-to{
+  opacity: 1;
+}
+
+.v-leave{
+  opacity: 1;
+}
+
+.v-leave-to{
+  opacity: 0;
+}
+
+.v-enter-active,
+.v-leave-active{
+  transition: .2s;
 }
 </style>
