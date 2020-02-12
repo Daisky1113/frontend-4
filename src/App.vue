@@ -1,6 +1,8 @@
 <template>
   <v-app>
-    <MyHeader/>
+    <MyHeader
+      pageTitle = "Hello Vuetify"
+    />
   </v-app>
 </template>
 

@@ -7,7 +7,7 @@
     >
       <v-app-bar-nav-icon></v-app-bar-nav-icon>
 
-      <v-toolbar-title>Page title</v-toolbar-title>
+      <v-toolbar-title>{{ pageTitle }}</v-toolbar-title>
 
       <v-spacer></v-spacer>
 
@@ -45,6 +45,9 @@
 <script>
 export default{
   name: 'MyHeader',
+  props: {
+    pageTitle: String,
+  },
   data: () => ({
 
   }),
