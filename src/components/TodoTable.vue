@@ -27,7 +27,7 @@
             <v-btn text icon color="pink">
               <v-icon>mdi-pencil</v-icon>
             </v-btn>
-            <v-btn text icon color="pink">
+            <v-btn @click="deleteTodo(todo.id)" text icon color="pink">
               <v-icon>mdi-trash-can-outline</v-icon>
             </v-btn>                    
           </td>
@@ -53,7 +53,7 @@ import { mapMutations } from 'vuex'
       done(id){
         this.doneTodo(id)
       },
-      ...mapMutations(['doneTodo'])
+      ...mapMutations(['doneTodo', 'deleteTodo'])
     }    
   }
 </script>

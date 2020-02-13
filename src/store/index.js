@@ -35,9 +35,14 @@ export default new Vuex.Store({
       const finishTodo = state.todos.find(todo => todo.id === id)
       finishTodo.state = true
       finishTodo.date = new Date()
+    },
+    deleteTodo(state,id){
+      const index = state.todos.findIndex(todo => todo.id === id)
+      state.todos.splice(index, 1)
     }
   },
   actions: {
+
   },
   getters: {
     doneTodos(state){
