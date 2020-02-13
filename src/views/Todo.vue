@@ -3,13 +3,13 @@
     <v-row>
       <v-col cols="12" md="6">
         <TodoTable
-          :todoDatas = "todos"
+          :todoDatas = "proceedTodos"
           todoTitle = "Todo"
         />
       </v-col>
       <v-col cols="12" md="6">
         <TodoDoneTable
-          :doneDatas = "done"
+          :doneDatas = "doneTodos"
           todoTitle = "Done"
         />
       </v-col>
@@ -20,11 +20,14 @@
 <script>
 import TodoTable from '../components/TodoTable.vue'
 import TodoDoneTable from '../components/TodoDoneTable.vue'
-
+import { mapGetters } from 'vuex'
 export default{
   components: {
     TodoTable,
     TodoDoneTable,
+  },
+  computed: {
+    ...mapGetters(['doneTodos', 'proceedTodos'])
   },
   data: function(){
     return {
