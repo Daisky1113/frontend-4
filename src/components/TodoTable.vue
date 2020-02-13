@@ -21,7 +21,7 @@
         <tr v-for="todo in todoDatas" :key="todo.id">
           <td>{{ todo.name }}</td>
           <td :data-todo-id="todo.id">
-            <v-btn text icon color="pink">
+            <v-btn @click="done(todo.id)" text icon color="pink">
               <v-icon>mdi-check</v-icon>
             </v-btn>
             <v-btn text icon color="pink">
@@ -40,6 +40,7 @@
 </template>
 <script>
 import AddTodo from '../components/AddTodo.vue'
+import { mapMutations } from 'vuex'
   export default {
     components: {
       AddTodo
@@ -48,5 +49,11 @@ import AddTodo from '../components/AddTodo.vue'
       todoDatas: Array,
       todoTitle: String
     },
+    methods: {
+      done(id){
+        this.doneTodo(id)
+      },
+      ...mapMutations(['doneTodo'])
+    }    
   }
 </script>

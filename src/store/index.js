@@ -27,6 +27,9 @@ export default new Vuex.Store({
     },
     addTodo(state,todo){
       state.todos.push(todo)
+    },
+    doneTodo(state,id){
+      state.todos.find(todo => todo.id === id).state = true
     }
   },
   actions: {
