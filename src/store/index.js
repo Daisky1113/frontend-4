@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-
+import moment from 'moment'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
@@ -34,7 +34,7 @@ export default new Vuex.Store({
     doneTodo(state,id){
       const finishTodo = state.todos.find(todo => todo.id === id)
       finishTodo.state = true
-      finishTodo.date = new Date()
+      finishTodo.date = moment().format("YYYY-MM-DD HH:mm:SS")
     },
     deleteTodo(state,id){
       const index = state.todos.findIndex(todo => todo.id === id)
