@@ -32,7 +32,9 @@ export default new Vuex.Store({
       state.todos.push(todo)
     },
     doneTodo(state,id){
-      state.todos.find(todo => todo.id === id).state = true
+      const finishTodo = state.todos.find(todo => todo.id === id)
+      finishTodo.state = true
+      finishTodo.date = new Date()
     }
   },
   actions: {
