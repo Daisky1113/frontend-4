@@ -11,7 +11,7 @@
 
       <v-spacer></v-spacer>
 
-      <v-btn icon>
+      <v-btn icon @click="logout">
         <v-icon>mdi-heart</v-icon>
       </v-btn>
 
@@ -43,7 +43,9 @@
   </div>
 </template>
 <script>
+// import firebase from 'firebase'
 import { mapMutations } from 'vuex'
+import { mapActions } from 'vuex'
 
 export default{
   name: 'MyHeader',
@@ -54,6 +56,7 @@ export default{
 
   }),
   methods: {
+    ...mapActions(['logout']),
     ...mapMutations(['toggleSideNav'])
   }
 }

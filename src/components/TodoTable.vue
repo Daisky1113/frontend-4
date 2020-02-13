@@ -40,7 +40,7 @@
 </template>
 <script>
 import AddTodo from '../components/AddTodo.vue'
-import { mapMutations } from 'vuex'
+import { mapActions } from 'vuex'
   export default {
     components: {
       AddTodo
@@ -51,9 +51,9 @@ import { mapMutations } from 'vuex'
     },
     methods: {
       done(id){
-        this.doneTodo(id)
+        this.updateTodo(id)
       },
-      ...mapMutations(['doneTodo', 'deleteTodo'])
+      ...mapActions(['deleteTodo', 'updateTodo'])
     }    
   }
 </script>

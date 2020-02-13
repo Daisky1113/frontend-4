@@ -15,6 +15,7 @@
       <v-progress-linear
         indeterminate
         color="pink"
+        v-if="isLoading"
       ></v-progress-linear> 
     <v-card-text>
       <v-form>
@@ -40,19 +41,21 @@
             ></v-text-field>
             </v-col>
           </v-row>
-          <v-btn small>login</v-btn>
+          <v-btn @click="sendLogin" small>login</v-btn>
         </v-container>
       </v-form>
     </v-card-text>
   </v-card>
 </template>
 <script>
-  export default {
+import { mapActions } from 'vuex'
+export default {
 data () {
       return {
         show1: false,
         password: '',
         email: '',
+        isLoading: false,
         rules: {
           required: value => !!value || 'Required.',
           min: v => v.length >= 8 || 'Min 8 characters',
@@ -60,5 +63,12 @@ data () {
         },
       }
     },
+    methods: {
+      sendLogin(){
+        this.isLoading = true
+        this.login({ email: this.email , password: this.password })
+      },
+      ...mapActions(['login'])
+    }
   }
 </script>

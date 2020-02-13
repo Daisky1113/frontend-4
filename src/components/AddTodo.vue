@@ -27,7 +27,7 @@
   </v-row>
 </template>
 <script>
-import { mapMutations } from 'vuex'
+import { mapActions } from 'vuex'
   export default {
     data: () => ({
       dialog: false,
@@ -38,12 +38,11 @@ import { mapMutations } from 'vuex'
         this.addTodo({
           name: this.name,
           state: false,
-          id: Math.floor(Math.random() * 1000)
         })
         this.dialog = false
         this.name = ''
       },
-      ...mapMutations(['addTodo'])
+      ...mapActions(['addTodo'])
     }
   }
 </script>
